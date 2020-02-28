@@ -66,6 +66,7 @@
 .caption{
     flex: 0 1 auto;
     background-color: #F3FF54;
+    padding: 15px;
 
 }
 h2, h1 { 
