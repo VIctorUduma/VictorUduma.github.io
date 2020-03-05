@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Prof A's Demo Page</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Prof A's Demo Page</div>
+        <button class="button" onclick="clickMe()">
+          Click me to make a change
+        </button>
+        <div class="content">
+          <p>
+            Retro fam narwhal hoodie meggings viral bushwick yr chartreuse.
+            Chartreuse seitan banh mi selfies, woke ennui venmo craft beer. Air
+            plant tumeric retro DIY iPhone poutine. +1 gastropub chillwave,
+            cronut glossier pork belly tacos poke next level fanny pack vegan
+            jianbing lo-fi.
+          </p>
+        </div>
+        <div class="footer"></div>
+      </div>
+    </div>
+    <script>
+
+      
+       
+      
+      function clickMe() {
+        const newHeader = document.querySelector(".header");
+        let fullName = "Victor Uduma"
+        let fullNameSplit = fullName.split(" ");
+        let firstName = fullNameSplit[0]
+        let secondName = fullNameSplit[1]
+        let totalLen =  firstName.length + secondName.length
+        
+
+        newHeader.innerHTML = "victor uduma lab 4" + " " + totalLen;
+        let myName = "Victor"
+        let nameLen = myName.length
+        let Newp = document.querySelector(".content");
+        let thirdChar = myName[2].toUpperCase();
+        
+        
+        let lastThree = myName.slice(-3)
+        //let fullName = myName.split(" ")
+        //let Firstname = fullName[0]
+        //let lastName = fullName[1]
+        //let totalLen = Firstname + lastName
+        
+
+        //var p1 = document.createElement("p");
+        //var content1 = document.createTextNode("<p> my name has " + nameLen + " " + "characthers</p>");
+        //var secondContent = document.createTextNode("<p> the  third characther of my name is "+ thirdChar+ "<br> " + lastThree+" </p>")
+        //p1.appendChild(content1);
+        //p1.classList.add("paragraph1");
+        //p1.appendChild(secondContent);
+        //Newp.appendChild(p1)
+        //var secondParagraph = document.createElement("p");
+        //var secondContent = document.createTextNode("<p> the  third characther of my name is "+ thirdChar+ "<br> " + lastThree+" </p>");
+        //secondParagraph.appendChild(secondContent);
+        //secondParagraph.classList.add("paragraph2");
+
+        //Newp.appendChild(p1);
+        //Newp.appendChild(secondParagraph);
+        
+        Newp.innerHTML = "<p> my name has " + nameLen + " " + "characthers</p> <p> the  third characther of my name is "+ myName[2].toUpperCase()+"<br> " + lastThree+" </p>" 
+        
+        
+        
+        
+        
+
+        
+      }
+    </script>
+  </body>
+</html>
