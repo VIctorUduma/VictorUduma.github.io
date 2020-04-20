@@ -62,7 +62,7 @@
           console.log('category',results);
           console.log(results[0]);
           let chart = new CanvasJS.Chart("chartContainer",{
-            theme: "light1",
+            theme: "light2",
             exportEnabled: true,
             animationEnabled: true,
             title: {
@@ -74,7 +74,7 @@
               toolTipContent: "<b>{label}</b>: {y}%",
               showInLegend: "true",
               legendText: "{label}",
-              indexLabelFontSize: 15,
+              indexLabelFontSize: 5,
               indexLabel: "{label} - {y}",
               dataPoints: results
 
