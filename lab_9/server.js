@@ -27,29 +27,43 @@ function processDataForFrontEnd(req, res) {
   // Your Fetch API call starts here
   // Note that at no point do you "return" anything from this function -
   // it instead handles returning data to your front end at line 34.
-    fetch("https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json")
+    fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
       .then((r) => r.json())
-      then((data) => {
+      .then((data) => {
+        return data
         
+      })
+      .then((data) => {
         let newDATA = data.filter((r) => r.geocoded_column_1)
-        console.log(data.length)
         const refined = newDATA.map((t) => ({
           category: t.category,
           name: t.name,
           location: t.geocoded_column_1.coordinates,
         }));
         return refined
-        .then((data) => {
-          return data.reduce((a, current) => {
-            if (!a[current.category]) {
-              a[current.category] = [];
-            }
-            a[current.category].push(current);
-            return a;
-          }, {});
-          
+      }).then((data) => {
+        return data.reduce((a,current) => {
+          if (!a[current.category]) {
+
+            a[current.category] = [];
+          }
+          a[current.category].push(current)
+          return a
+        }, {});
+      })
+      .then((data) => {
+        console.log('new data', data)
+        let reformattedData = Object.entries(data).map((m, i) => {
+          console.log(m);
+          return {
+            y: m[1].length,
+            label: m[0]
+          };
 
 
+        });
+        return reformattedData
+      })
       .then((data) => {
         
 
